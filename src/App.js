@@ -3,7 +3,8 @@ import Navbar from './Components/Navbar'
 import News from './Components/News'
 import {
   BrowserRouter,
-  Routes,
+  HashRouter,
+  // Routes,
   Route,
 } from "react-router-dom";
 
@@ -15,7 +16,7 @@ export default class App extends Component {
         
         <BrowserRouter>
         <Navbar/>
-        <Routes basename="/newsapplive">
+        <HashRouter basename="/newsapplive">
           
           <Route exact path='/' element= { <News key="Home" pageSize={6} country="us" category="general"/> }/>
           <Route exact path='/entertainment' element= { <News key="entertainment" pageSize={6} country="us" category="entertainment"/> }/>
@@ -25,7 +26,7 @@ export default class App extends Component {
           <Route exact path='/science' element= { <News key="science" pageSize={6} country="us" category="science"/> }/>
           <Route exact path='/sports' element= { <News key="sports" pageSize={6} country="us" category="sports"/> }/>
           <Route exact path='/technology' element= { <News key="technology" pageSize={6} country="us" category="technology"/> }/>
-          </Routes>       
+          </HashRouter>       
           </BrowserRouter>
       </div>
     )
